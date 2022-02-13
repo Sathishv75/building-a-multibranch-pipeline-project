@@ -24,14 +24,5 @@ pipeline {
                 input message: 'Finished using the development web site? (Click "Proceed" to continue)'
             }
         }
-        stage('Deploy for production') {
-            when {
-                branch 'production'
-            }
-            steps {
-                sh './jenkins/scripts/deploy-for-production.sh'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-            }
-        } 
     }
 }
